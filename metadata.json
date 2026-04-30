@@ -1,0 +1,6 @@
+{
+  "name": "THE CHOSE v1.0",
+  "description": "High-end luxury golf OS for Android, featuring elite distance tracking, neural caddie advice, and premium design.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["GPS Tracking", "AI Caddie Advice"]
+}

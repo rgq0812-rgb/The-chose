@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@100;300;400;500;700&family=Roboto+Mono:wght@100;200;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: "Cinzel", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cockpit: "Roboto Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply font-montserrat;
+  }
+}
+
+.font-cinzel { font-family: var(--font-cinzel); }
+.font-cockpit { 
+  font-family: var(--font-cockpit);
+  font-variant-numeric: tabular-nums;
+}
+
+.air-panel {
+  background: rgba(5, 7, 12, 0.26);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255,255,255,0.045);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.035);
+}
