@@ -1,30 +1,24 @@
-name: FABRICATION THE CHOSE
+name: DEPLOYER THE CHOSE
 
 on:
   push:
-    branches: [ main ]
+    branches: [ principal ]
 
 jobs:
-  android-build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Recupération du code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Installation Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-
-      - name: Fabrication de l'APK
+      - name: Installation et Build
         run: |
           npm install
-          cd android && ./gradlew assembleRelease
+          npm run build
 
-      - name: Livraison du fichier
-        uses: actions/upload-artifact@v3
+      - name: Déploiement Web (Aperçu Live)
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: THE_CHOSE_VERSION_FINALE
-          path: android/app/build/outputs/apk/release/app-release.apk
+          folder: dist # C'est là que ton appli est prête
+          branch: gh-pages # On crée une branche spéciale pour voir l'app
           
