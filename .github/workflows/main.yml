@@ -1,8 +1,13 @@
-name: DEPLOYER THE CHOSE
+name: DEPLOYER LE CHOISI
 
 on:
   push:
     branches: [ principal ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -13,12 +18,13 @@ jobs:
 
       - name: Installation et Build
         run: |
+          cd Le-choisi
           npm install
           npm run build
 
-      - name: Déploiement Web (Aperçu Live)
+      - name: Déploiement Web
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # C'est là que ton appli est prête
-          branch: gh-pages # On crée une branche spéciale pour voir l'app
+          folder: Le-choisi/dist
+          branch: gh-pages
           
