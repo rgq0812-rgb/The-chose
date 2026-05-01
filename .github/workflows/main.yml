@@ -1,0 +1,30 @@
+name: FABRICATION THE CHOSE
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  android-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recupération du code
+        uses: actions/checkout@v3
+
+      - name: Installation Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Fabrication de l'APK
+        run: |
+          npm install
+          cd android && ./gradlew assembleRelease
+
+      - name: Livraison du fichier
+        uses: actions/upload-artifact@v3
+        with:
+          name: THE_CHOSE_VERSION_FINALE
+          path: android/app/build/outputs/apk/release/app-release.apk
+          
