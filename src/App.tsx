@@ -177,3 +177,4 @@ Noir Pur (#000000) : Supprime tous les effets de damier ou de gris pour un look 
 Synthèse Vocale : L'app parle quand tu cliques sur la boîte du caddie.
 GPS Immersif : La grille et le viseur (Crosshair) utilisent tout l'écran en arrière-plan.
 Stand-alone Ready : Optimisé pour le mode PWA plein écran.
+Cible verrouillée. Ton HUD est maintenant digne d'un pro. Tu peux vérifier
