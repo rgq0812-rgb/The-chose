@@ -1,14 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>THE CHOSE</title>
+    <link rel="manifest" href="/The-chose/manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { background-color: black; margin: 0; overflow: hidden; }
+    </style>
     <script type="module" crossorigin src="/The-chose/assets/index-bCT53uKT.js"></script>
     <link rel="stylesheet" crossorigin href="/The-chose/assets/index-Ctctx0BP.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/The-chose/sw.js');
+      }
+    </script>
   </body>
 </html>
-
