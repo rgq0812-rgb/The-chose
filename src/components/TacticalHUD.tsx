@@ -180,30 +180,23 @@ const TacticalHUD = () => {
           </div>
         </section>
 
-        {/* DEFI INSTINCT (GLITCH FIXED) */}
-        <div className="p-6 bg-emerald-500/10 border border-emerald-500/20 rounded-[2.5rem] relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent" />
-          <div className="relative z-10 flex items-center justify-between">
-            <div className="p-3 bg-emerald-500/20 rounded-2xl border border-emerald-500/30">
-              <Plus className="text-emerald-400" size={18} />
-            </div>
-            <div className="flex-1 px-4">
-              <div className="text-[8px] font-black uppercase tracking-widest text-emerald-400/60">Défis Quotidien</div>
-              <div className="text-lg font-black italic uppercase tracking-tighter">Défi Instinct</div>
-              <div className="w-full h-1 bg-white/10 mt-2 rounded-full overflow-hidden">
-                <div className="w-1/3 h-full bg-emerald-400" />
-              </div>
-            </div>
-            <ChevronRight className="opacity-20 translate-x-2" size={20} />
+        {/* DÉFI INSTINCT - VERSION STABLE ONYX */}
+        <button className="w-full p-8 bg-zinc-900 border border-zinc-700 rounded-[2.5rem] flex flex-col items-center justify-center gap-4 relative group active:scale-95 transition-all">
+          <span className="text-[#C9964A] text-2xl font-black italic uppercase tracking-tighter text-center">
+            DÉFI INSTINCT
+          </span>
+          <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center">
+            <Plus className="text-[#C9964A]" size={24} />
           </div>
-          {/* Subtle decoration to replace the glitch */}
-          <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl" />
-        </div>
+          <div className="absolute top-2 right-4 opacity-10 text-[8px] font-black uppercase tracking-widest">
+            Protocol Instinct v1.0
+          </div>
+        </button>
       </div>
 
-      {/* BOTTOM TAB BAR */}
-      <div className="fixed bottom-0 left-0 right-0 p-5 z-50 bg-gradient-to-t from-[#07080a] via-[#07080a]/90 to-transparent pt-10">
-        <div className="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-2 flex items-center justify-between max-w-lg mx-auto">
+      {/* BOTTOM TAB BAR - STABILIZED DESIGN */}
+      <div className="fixed bottom-0 left-0 right-0 p-5 z-50 bg-gradient-to-t from-[#07080a] to-transparent pt-8">
+        <div className="bg-[#101114] border border-white/10 rounded-[2.5rem] p-2 flex items-center justify-between max-w-lg mx-auto shadow-2xl">
           {[
             { icon: Home, label: 'VESTIAIRE' },
             { icon: LayoutGrid, label: 'LE HUB' },
