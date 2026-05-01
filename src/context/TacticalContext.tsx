@@ -23,6 +23,8 @@ interface TacticalContextType {
   setCurrentHoleIndex: (i: number) => void;
   selectedTee: 'black' | 'white' | 'ladies' | 'yellow' | 'blue' | 'red';
   setSelectedTee: (tee: any) => void;
+  caddieMode: Mode;
+  setCaddieMode: (m: Mode) => void;
 }
 
 const TacticalContext = createContext<TacticalContextType | undefined>(undefined);
@@ -48,6 +50,7 @@ export const TacticalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0]);
   const [currentHoleIndex, setCurrentHoleIndex] = useState(0);
   const [selectedTee, setSelectedTee] = useState<'black' | 'white' | 'ladies' | 'yellow' | 'blue' | 'red'>('white');
+  const [caddieMode, setCaddieMode] = useState<Mode>('pred');
 
   useEffect(() => {
     localStorage.setItem('user_index', userIndex.toString());
@@ -88,7 +91,8 @@ export const TacticalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       subscription, setSubscription,
       currentCourse, setCurrentCourse,
       currentHoleIndex, setCurrentHoleIndex,
-      selectedTee, setSelectedTee
+      selectedTee, setSelectedTee,
+      caddieMode, setCaddieMode
     }}>
       {children}
     </TacticalContext.Provider>

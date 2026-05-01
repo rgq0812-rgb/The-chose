@@ -5,11 +5,22 @@
   --font-cinzel: "Cinzel", serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-cockpit: "Roboto Mono", monospace;
+  --color-gold: #c9964a;
 }
 
 @layer base {
   body {
     @apply font-montserrat;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
