@@ -53,7 +53,7 @@ export default function App() {
     selectedTee, setSelectedTee
   } = useTactical();
 
-  const [activeTab, setActiveTab] = useState<'hud' | 'hub' | 'locker' | 'account'>('hud');
+  const [activeTab, setActiveTab] = useState<'hud' | 'hub' | 'locker' | 'account'>('hub');
   const [showPaywall, setShowPaywall] = useState(false);
   const [activeCaddie, setActiveCaddie] = useState(CADDIES_CONFIG[0]);
   const [selectedLevel, setSelectedLevel] = useState(THE_STUDENT_LEVELS[0]);
@@ -115,7 +115,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col overflow-hidden select-none bg-black text-white font-sans">
+    <div className="h-[100dvh] w-screen flex flex-col overflow-hidden select-none bg-black text-white font-sans">
+      
       
       {/* 4 PILLARS NAVIGATION (FIXED BOTTOM) */}
       <nav className="fixed bottom-0 left-0 right-0 z-[100] pb-8 px-6 pointer-events-none">
@@ -149,7 +150,8 @@ export default function App() {
       </nav>
 
       {/* TABS CONTENT */}
-      <main className="flex-1 overflow-y-auto pb-32">
+      <main className="flex-1 overflow-y-auto pb-32 touch-pan-y overscroll-y-contain">
+
         <AnimatePresence mode="wait">
           {activeTab === 'locker' && (
             <motion.div key="locker" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
